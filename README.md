@@ -38,6 +38,16 @@ cambiar_estado_pedido(pedidos, 101, "Entregado")
 
 pedidos_juan = pedidos_por_cliente(pedidos, "juan@email.com")
 
-print("Productos en la tienda:", productos)
-print("Pedidos en la tienda:", pedidos)
-print("Pedidos de Juan:", pedidos_juan)
+pprint("Productos en la tienda:")
+for producto in productos:
+    print(f"* {producto['nombre']} (ID: {producto['id']}, Precio: ${producto['precio']}, Stock: {producto['stock']})")
+
+
+print("\nPedidos en la tienda:")
+for pedido in pedidos:
+    print(f"ID Pedido: {pedido['id_pedido']}, Cliente: {pedido['cliente']}, Estado: {pedido['estado']}")
+
+
+print("\nPedidos de Juan:")
+for pedido in pedidos_juan:
+    print(f"ID Pedido: {pedido['id_pedido']}, Estado: {pedido['estado']}")
